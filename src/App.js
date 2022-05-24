@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { players } from './dummydata'
+import Player from './compontents/player'
+import Scorecard from './compontents/scorecard'
+import styled from 'styled-components'
+import { jacksonCountryClub } from './JCC'
+
+console.log(players)
+console.log(jacksonCountryClub);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>The Golf Bet</h1>
+      <Scorecard data={jacksonCountryClub}/>
+      {players.map((player) => {
+       return <Player player={player} key={player.id}/>
+      })}
     </div>
   );
 }
