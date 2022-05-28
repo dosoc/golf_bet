@@ -1,7 +1,8 @@
 import React from 'react';
 
 export default function BetForm(props) {
-    const { values, setUpBets, onChange } = props;
+    const { values, players, setUpBets, onChange } = props;
+    console.log(players)
 
     return(
         <div className='form container'>
@@ -14,6 +15,20 @@ export default function BetForm(props) {
                         value={values.course}
                         onChange={onChange} />
                 </label>
+                <div>
+                    <h4>Players</h4>
+                    {players && players.map((player, i) => {
+                        return <label>{player.firstName}
+                        <input 
+                            type="checkbox"
+                            name={player.name}
+                            value={values.name}
+                            onChange={onChange} />
+                        </label>
+                    })}
+                    
+                    
+                </div>
             </form>
         </div>
     )

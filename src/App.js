@@ -6,10 +6,6 @@ import Scorecard from './compontents/scorecard'
 import BetForm from './compontents/betForm.jsx'
 import { jacksonCountryClub } from './JCC'
 
-
-console.log(testPlayers)
-console.log(jacksonCountryClub);
-
 const initialFormValues = {
   course: "",
   players: "",
@@ -22,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <h1>The Golf Bet</h1>
-      <BetForm values={formValues} />
+      <BetForm values={formValues} players={players} />
       <Scorecard data={jacksonCountryClub}/>
       {players.map((player) => {
        return <Player player={player} key={player.id}/>
