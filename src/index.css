@@ -25,3 +25,6 @@ code {
   margin: 5px;
   background-color: rgba(11, 10, 9, 0.1);
 }
+button {
+  height: 20px;
+}

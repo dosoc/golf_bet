@@ -18,9 +18,9 @@ const Scorecard = (props) => {
             <StyledHole>
                 {props.data.map(hole=> {
                     return <div className='hole-container' key={hole.number}>
-                        <p>Hole: {hole.number}</p>
+                        <p>{hole.number}</p>
                         <p>Par: {hole.par}</p>
-                        <p>{hole.length} Yards</p>
+                        <p>{hole.length}</p>
                     </div>
                 })}
             </StyledHole>

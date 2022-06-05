@@ -10,12 +10,18 @@ const StyledPlayer = styled.div`
 `
 
 const Player = props => {
+    const { player, key, remove } = props
+
+    const removePlayer = (evt) => {
+        console.log(evt.target)
+    }
     
     return (
         <StyledPlayer className='container'>
-            <h2>{props.player.firstName} {props.player.lastName}</h2>
-            <p>{props.player.club}</p>
-            <p>Handicap Index: {props.player.handicapIndex}</p>
+            <h2>{player.firstName} {player.lastName}</h2>
+            <p>{player.club}</p>
+            <p>{player.handicapIndex}</p>
+            <button onClick={removePlayer} key={player.firstName}>Remove Player</button>
         </StyledPlayer>
     )
 }
